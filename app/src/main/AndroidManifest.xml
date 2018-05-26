@@ -1,21 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.hee.hearingbook">
-
+    <!-- 퍼미션 정보 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
     <application
+        android:name=".HearingBookApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        android:theme="@style/AppTheme"
+        android:largeHeap="true">
+        <activity android:name=".activities.IntroActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
+        <activity android:name=".activities.MainActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activities.LoginActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activities.MypageActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activities.BuyPointActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activities.PurchaseHistoryActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activities.ShoppingBasketActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activities.FavoritActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activities.ProfileImageChangeActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activities.BookInfoPage" android:screenOrientation="portrait"/>
+        <activity android:name=".activities.BookDetailPage" android:screenOrientation="portrait"/>
+        <activity android:name=".activities.RadioActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activities.SearchBookActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activities.BestSellerFullActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activities.BookContentsActivity" android:screenOrientation="portrait"/>
 
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="@string/kakao_api_key" />
+    </application>
 </manifest>
